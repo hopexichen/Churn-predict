@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  
+  <h2>Predict Customer Churn Probability</h2>
+  
+  <form method="POST" action="/">
+    Average transaction value:<br>
+    <input type="number" name="avg_transaction_value">
+    <br><br>
+    Points in wallet:<br>
+    <input type="number" name="points_in_wallet">
+    <br><br>
+
+    Membership category:<br>
+    <select name='operator'>
+      <option value="Premium Membership">Premium Membership</option>
+      <option value="Platinum Membership">Platinum Membership</option>
+      <option value="Gold Membership">Gold Membership</option>
+      <option value="Silver Membership">Silver Membership</option>
+      <option value="Basic Membership">Basic Membership</option>
+      <option value="No Membership">No Membership</option>
+    </select>
+    <br><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+
+  {% if pred %}
+  <p>The customer churn probability is {{ pred }}</p>
+  {% endif %}
+
+  </body>
+</html>
